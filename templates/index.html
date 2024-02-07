@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Conversion and Compression</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>File Conversion and Compression</h1>
+
+        <div class="form-box">
+            <h2>Convert PDF to JPEG</h2>
+            <form action="/convert/pdf-to-jpeg" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept=".pdf">
+                <button type="submit">Convert</button>
+            </form>
+        </div>
+
+        <hr>
+
+        <div class="form-box">
+            <h2>Convert PDF to PNG</h2>
+            <form action="/convert/pdf-to-png" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept=".pdf">
+                <button type="submit">Convert</button>
+            </form>
+        </div>
+
+        <hr>
+
+        <div class="form-box">
+            <h2>Lock PDF</h2>
+            <form action="/lock-pdf" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept=".pdf">
+                <input type="password" name="password" placeholder="Enter Password">
+                <button type="submit">Lock</button>
+            </form>
+        </div>
+
+        <hr>
+
+        <div class="form-box">
+            <h2>Unlock PDF</h2>
+            <form action="/unlock-pdf" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept=".pdf">
+                <input type="password" name="password" placeholder="Enter Password">
+                <button type="submit">Unlock</button>
+            </form>
+        </div>
+
+        <hr>
+
+        <div class="form-box">
+            <h2>Convert JPEG to PNG</h2>
+            <form action="/convert/jpeg-to-png" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept=".jpg, .jpeg">
+                <button type="submit">Convert</button>
+            </form>
+        </div>
+
+        <hr>
+
+        <div class="form-box">
+            <h2>Convert PNG to JPEG</h2>
+            <form action="/convert/png-to-jpeg" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept=".png">
+                <button type="submit">Convert</button>
+            </form>
+        </div>
+
+        <hr>
+
+        <div class="form-box">
+            <h2>Compress Image</h2>
+            <form action="/compress-image" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept=".png, .jpg, .jpeg">
+                <input type="number" name="size" placeholder="Desired Size (KB)" min="1">
+                <button type="submit">Compress</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
